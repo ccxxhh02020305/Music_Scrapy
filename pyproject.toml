@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gh-scrapy"
+version = "0.1.0"
+description = "分布式音乐/番剧数据采集"
+requires-python = ">=3.11"
+dependencies = [
+    "Scrapy>=2.19",
+    "scrapy-redis>=0.9.1",
+    "PyMySQL>=1.2",
+    "orjson>=3.13",
+    "python-dotenv>=1.0",
+    "never-jscore>=3.2",
+    "beautifulsoup4>=4.15",
+    "lxml>=6.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "fakeredis[lua]>=2.25",
+    "ruff>=0.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["GH_scrapy*", "parsers*", "server*"]
+namespaces = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

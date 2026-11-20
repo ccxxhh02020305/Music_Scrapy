@@ -1,0 +1,21 @@
+site_qqmusic:
+  start_url: ["https://u6.y.qq.com/cgi-bin/musics.fcg"]
+  parser: QQMusic_parser  # 解析器
+  qps: 40         # 令牌桶速率
+  concurrency: 8  # 每站连接/并发上限
+  delay: 0.05
+site_bilibili:
+  start_url: ["https://www.bilibili.com/bangumi/play/ep5852945?from_spmid=666.9.recommend.1"]
+  parser: bili_parser
+  qps: 40
+  delay: 0.05
+site_boss:
+  start_url: ["https://www.zhipin.com/web/geek/jobs?query=&city=101190800&position=100515"]
+  parser: boss_parser
+  qps: 40
+  delay: 0.05
+site_zhihu:
+  start_url: ["https://www.zhihu.com/"]
+  parser: zhihu_parser
+  qps: 40
+  delay: 0.05
